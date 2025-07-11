@@ -11,18 +11,18 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
   <div class="container-fluid">
-    <!-- Logo -->
+   
     <a class="navbar-brand fw-bold" href="#">MyLogo</a>
 
-    <!-- Toggler for mobile -->
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Main content -->
+    
     <div class="collapse navbar-collapse justify-content-between" id="navbarMain">
 
-      <!-- Centered Nav Items -->
+     
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -38,14 +38,14 @@
         </li>
       </ul>
 
-      <!-- Search + Profile Dropdown -->
+      
       <div class="d-flex align-items-center">
-        <!-- Search -->
+        
         <form class="d-flex me-3" role="search">
          <input id="searchInput" class="form-control" type="search" placeholder="Search">
         </form>
 
-        <!-- Profile Dropdown -->
+        
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-person-circle fs-4"></i>
@@ -60,9 +60,90 @@
   </div>
 </nav>
 
+<div class="image-container">
+  <img src="./graphic/classroom.png" alt="Banner" class="img-fluid">
+  <div id="dynamicText" class="overlay-text">Welcome!</div>
+  <button id="welcome-sign-in" class="btn btn-primary rounded-pill welcome-sign-in" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In <i class="bi bi-arrow-right"></i></button>
+</div>
+
+<div class="container my-5">
+  <div class="row g-4 justify-content-center">
+
     
+    <div class="col-md-4">
+      <div class="card h-100 text-center">
+        <img src="./graphic/classroom.png" class="card-img-top mx-auto d-block" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Course Offering</h5>
+          <p class="card-text">Explore our wide range of free and career-focused tech courses designed to help you gain real-world skills and land your next job.</p>
+          <a href="#" class="btn btn-primary w-100 align-items-center justify-content-center gap-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4">
+      <div class="card h-100 text-center">
+        <img src="./graphic/classroom.png" class="card-img-top mx-auto d-block" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Events Page</h5>
+          <p class="card-text">Stay connected with our online and local events — including workshops, networking sessions, and alumni meetups near you.</p>
+         <a href="#" class="btn btn-primary w-100 align-items-center justify-content-center gap-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4">
+      <div class="card h-100 text-center">
+        <img src="./graphic/classroom.png" class="card-img-top mx-auto d-block" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Forum</h5>
+          <p class="card-text">Join the community! Ask questions, share advice, and connect with fellow learners and alumni in our interactive discussion forum.</p>
+          <a href="#" class="btn btn-primary w-100 align-items-center justify-content-center gap-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-dark text-light py-5">
+  <div class="container">
+    <div class="row">
+
+     
+      <div class="col-md-4 mb-4">
+    <h5 class="text-uppercase">Learning</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Courses</a></li>
+        <li><a href="#" class="text-light text-decoration-none">Tutorials</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Projects</a></li>
+        </ul>
+      </div>
+
+    
+      <div class="col-md-4">
+        <h5 class="text-uppercase">Resources</h5>
+        <ul class="list-unstyled">
+        <li><a href="#" class="text-light text-decoration-none">Forum</a></li>
+          <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+        <li><a href="#" class="text-light text-decoration-none">About</a></li>
+        </ul>
+      </div>
+      
+    <div class="col-md-4 text-center mt-4">
+        <h5 class="text-uppercase">Socials</h5>
+      <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-4"></i></a>
+      <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-4"></i></a>
+      <a href="#" class="text-light me-3"><i class="bi bi-instagram fs-4"></i></a>
+      <a href="#" class="text-light"><i class="bi bi-linkedin fs-4"></i></a>
+    </div>
+    </div>
+  </div>
+</footer>
+
    
-  <!-- Login Modal -->
+
 <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -73,7 +154,7 @@
       </div>
       <div class="modal-body">
         <form id="loginForm">
-            <div class="createbutton mx-auto style=width: 80% text-center">
+            <div class="createbutton mx-auto text-center">
                 <p>Don’t have a  Account? <a href="#" data-bs-toggle="modal" data-bs-target="#createAccountModal">Create one</a></p>
             </div>
           <div class="mb-3">
@@ -95,7 +176,7 @@
     </div>
   </div>
 </div>
-<!-- Create Account Modal -->
+
 <div class="modal fade" id="createAccountModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -108,7 +189,7 @@
 
       <div class="modal-body">
         <form id="createAccountForm">
-            <div class="createbutton mx-auto style=width: 80% text-center">
+            <div class="createbutton mx-auto text-center">
                 <p>Already have a Account?<a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</a></p>
             </div>
           <div class="mb-3">
