@@ -24,6 +24,7 @@ import { User } from './scripts/user';
         modal.hide();
         // Redirect or update UI
         alert('Login successful!');
+        location.reload();
       } else {
         document.getElementById('loginError').textContent = result.message || 'Login failed.';
       }
@@ -88,6 +89,19 @@ import { User } from './scripts/user';
     searchInput.addEventListener('blur', () => {
       searchInput.placeholder = 'Search';
     });
+  }
+  // Check if a user is logged in
+  const storedUser = localStorage.getItem('user');
+  if (storedUser) {
+    try {
+      const user = JSON.parse(storedUser);
+      const dynamicText = document.getElementById('dynamic-text');
+      if (dynamicText && user.fullName) {
+        dynamicText.textContent = `Welcome back, ${user.fullName}!`;
+      }
+    } catch (err) {
+      console.error('Failed to parse user from localStorage:', err);
+    }
   }
 });
  
