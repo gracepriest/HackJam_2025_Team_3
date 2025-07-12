@@ -1,9 +1,10 @@
-class User {
+export class User {
   constructor({
     id,
     username,
     fullName,
-    email,
+    xp,
+    email = 0,
     role = 'Student',
     avatar = null,
     bio = '',
@@ -69,6 +70,10 @@ class User {
     if (!this.skills.includes(skill)) {
       this.skills.push(skill);
     }
+  }
+
+  addXp(xp){
+    this.xp += xp;
   }
 
   logActivity(activity) {
