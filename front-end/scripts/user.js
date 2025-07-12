@@ -1,12 +1,13 @@
 export class User {
   constructor({
-    id,
-    username,
-    fullName,
+   
+    firstName,
+    lastName,
+    email,
+    location,
+    role, 
+    /* id,
     xp,
-    email = 0,
-    role = 'Student',
-    avatar = null,
     bio = '',
     stats = {},
     badges = [],
@@ -14,16 +15,16 @@ export class User {
     coursesCompleted = [],
     socialLinks = {},
     activityLog = []
+    avatar = null,*/
   }) {
-    this.id = id;
-    this.username = username;
-    this.fullName = fullName;
+    this.firstName = id;
+    this.lastNamename = username;
     this.email = email;
+    this.location = location;
     this.role = role;
-    this.avatar = avatar; // URL to profile image
-    this.bio = bio;
+   
 
-    // Community / learning stats
+    /*// Community / learning stats
     this.stats = {
       posts: stats.posts || 0,
       likes: stats.likes || 0,
@@ -82,4 +83,6 @@ export class User {
       date: new Date().toISOString().split('T')[0]
     });
   }
+    */
+}
 }
