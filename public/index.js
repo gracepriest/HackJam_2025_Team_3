@@ -49,7 +49,7 @@ function updateUIForLoggedInUser(user) {
     `;
   }
   
-  // Update welcome button
+  //Update welcome button
   const welcomeButton = document.getElementById('welcome-sign-in');
   if (welcomeButton) {
     welcomeButton.textContent = 'Go to Dashboard';
