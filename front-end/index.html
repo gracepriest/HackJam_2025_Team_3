@@ -7,12 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
   <div class="container-fluid">
-   
-    <a class="navbar-brand fw-bold" href="#">MyLogo</a>
+
+    <a class="navbar-brand fw-bold" href="index.html"><img src="./graphic/logo.png" alt="MyLogo" class="img-fluid" width="100"></a>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
@@ -28,13 +29,13 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Courses</a>
+          <a class="nav-link"  href="courses.html">Courses</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Events</a>
+          <a class="nav-link" href="events.html">Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Forum</a>
+          <a class="nav-link" href="forum.html">Forum</a>
         </li>
       </ul>
 
@@ -72,11 +73,11 @@
     
     <div class="col-md-4">
       <div class="card h-100 text-center">
-        <img src="./graphic/classroom.png" class="card-img-top mx-auto d-block" alt="...">
+        <img src="./graphic/courses.png" class="card-img-top mx-auto d-block" alt="...">
         <div class="card-body">
           <h5 class="card-title">Course Offering</h5>
           <p class="card-text">Explore our wide range of free and career-focused tech courses designed to help you gain real-world skills and land your next job.</p>
-          <a href="#" class="btn btn-primary w-100 align-items-center justify-content-center gap-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+          <a href="courses.html" class="btn btn-primary w-100 align-items-center justify-content-center gap-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -84,11 +85,11 @@
     
     <div class="col-md-4">
       <div class="card h-100 text-center">
-        <img src="./graphic/classroom.png" class="card-img-top mx-auto d-block" alt="...">
+        <img src="./graphic/events.png" class="card-img-top mx-auto d-block" alt="...">
         <div class="card-body">
           <h5 class="card-title">Events Page</h5>
           <p class="card-text">Stay connected with our online and local events — including workshops, networking sessions, and alumni meetups near you.</p>
-         <a href="#" class="btn btn-primary w-100 align-items-center justify-content-center gap-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+         <a href="events.html" class="btn btn-primary w-100 align-items-center justify-content-center gap-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -96,11 +97,11 @@
     
     <div class="col-md-4">
       <div class="card h-100 text-center">
-        <img src="./graphic/classroom.png" class="card-img-top mx-auto d-block" alt="...">
+        <img src="./graphic/forum.png" class="card-img-top mx-auto d-block" alt="...">
         <div class="card-body">
           <h5 class="card-title">Forum</h5>
           <p class="card-text">Join the community! Ask questions, share advice, and connect with fellow learners and alumni in our interactive discussion forum.</p>
-          <a href="#" class="btn btn-primary w-100 align-items-center justify-content-center gap-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
+          <a href="forum.html" class="btn btn-primary w-100 align-items-center justify-content-center gap-2">LEARN MORE <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -113,7 +114,6 @@
 
      
       <div class="col-md-4 mb-4">
-        <!--used for my headers-->
     <h5 class="text-uppercase">Learning</h5>
         <ul class="list-unstyled">
           <li><a href="#" class="text-light text-decoration-none">Courses</a></li>
@@ -126,13 +126,13 @@
       <div class="col-md-4">
         <h5 class="text-uppercase">Resources</h5>
         <ul class="list-unstyled">
-        <li><a href="#" class="text-light text-decoration-none">Forum</a></li>
+        <li><a href="forum.html" class="text-light text-decoration-none">Forum</a></li>
           <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
         <li><a href="#" class="text-light text-decoration-none">About</a></li>
         </ul>
       </div>
       
-    <div class="col-md-4 text-center">
+    <div class="col-md-4 text-center mt-4">
         <h5 class="text-uppercase">Socials</h5>
       <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-4"></i></a>
       <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-4"></i></a>
@@ -156,7 +156,7 @@
       <div class="modal-body">
         <form id="loginForm">
             <div class="createbutton mx-auto text-center">
-                <p>Don’t have a  Account? <a href="#" data-bs-toggle="modal" data-bs-target="#createAccountModal">Create one</a></p>
+                <p>Don't have an Account? <a href="#" data-bs-toggle="modal" data-bs-target="#createAccountModal" data-bs-dismiss="modal">Create one</a></p>
             </div>
           <div class="mb-3">
             <label for="loginEmail" class="form-label">Email</label>
@@ -191,13 +191,17 @@
       <div class="modal-body">
         <form id="createAccountForm">
             <div class="createbutton mx-auto text-center">
-                <p>Already have a Account?<a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</a></p>
+                <p>Already have an Account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Sign In</a></p>
             </div>
           <div class="mb-3">
-            <label for="fullName" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="fullName" required>
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" required>
           </div>
-
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" required>
+          </div>
+          
           <div class="mb-3">
             <label for="registerEmail" class="form-label">Email</label>
             <input type="email" class="form-control" id="registerEmail" required>
@@ -206,6 +210,10 @@
           <div class="mb-3">
             <label for="registerPassword" class="form-label">Password</label>
             <input type="password" class="form-control" id="registerPassword" required>
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" required>
           </div>
 
           <div id="registerError" class="text-danger small mb-2"></div>
@@ -218,6 +226,7 @@
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="index.js"></script>
+<script type="module" src="./index.js"></script>
+
 </body>
 </html>
