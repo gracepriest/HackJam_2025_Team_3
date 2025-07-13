@@ -51,6 +51,7 @@ function updateUIForLoggedInUser(user) {
       <li><a class="dropdown-item" href="profile.html">Profile</a></li>
       <li><a class="dropdown-item" href="my-learning.html">My Learning</a></li>
       <li><a class="dropdown-item" href="events.html">Events</a></li>
+        <li><a class="dropdown-item" href="badges.html">Badges</a></li>
       <li><a class="dropdown-item" href="forum.html">Forum</a></li>
       <li><a class="dropdown-item" href="#" onclick="logoutUser()">Logout</a></li>
     `;
