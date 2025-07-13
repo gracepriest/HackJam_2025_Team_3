@@ -42,6 +42,8 @@ function updateUIForLoggedInUser(user) {
   if (dropdownMenu) {
     dropdownMenu.innerHTML = `
       <li><a class="dropdown-item" href="#" onclick="showProfile()">Profile</a></li>
+      <li><a class="dropdown-item" href="courses.html">Courses</a></li>
+      <li><a class="dropdown-item" href="events.html">Events</a></li>
       <li><a class="dropdown-item" href="#" onclick="logoutUser()">Logout</a></li>
     `;
   }
@@ -50,7 +52,7 @@ function updateUIForLoggedInUser(user) {
   const welcomeButton = document.getElementById('welcome-sign-in');
   if (welcomeButton) {
     welcomeButton.textContent = 'Go to Dashboard';
-    welcomeButton.onclick = () => window.location.href = 'forum.html';
+    welcomeButton.onclick = () => window.location.href = 'profile.html';
   }
 }
 
@@ -65,6 +67,7 @@ function updateUIForLoggedOutUser() {
     dropdownMenu.innerHTML = `
       <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
       <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createAccountModal">Create Account</a></li>
+      
     `;
   }
   

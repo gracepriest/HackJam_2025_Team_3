@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Courses - Per Scholas Alumni</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html"><img src="./graphic/logo.png" alt="MyLogo" class="img-fluid" width="100"></a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-between" id="navbarMain">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="forum.html">Forum</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <form class="d-flex me-3" role="search">
+                        <input id="searchInput" class="form-control" type="search" placeholder="Search courses">
+                    </form>
+                    
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle fs-4"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createAccountModal">Create Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold color-text">Learn & Grow</h1>
+                    <p class="lead color-text">Access free courses created by fellow alumni. Build skills, advance your career, and share your knowledge with the community.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <button class="btn btn-light btn-lg me-3" id="createCourseBtn" data-bs-toggle="modal" data-bs-target="#createCourseModal">
+                        <i class="bi bi-plus-circle me-2"></i>Create Course
+                    </button>
+                    <a href="my-learning.html" class="btn btn-outline-light btn-lg" id="myCoursesBtn">
+                        <i class="bi bi-bookmark me-2"></i>My Learning
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Filter Sidebar -->
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Filter Courses</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Category Filter -->
+                        <div class="mb-3">
+                            <h6>Category</h6>
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action active" data-category="all">
+                                    <i class="bi bi-grid me-2"></i>All Courses
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-category="programming">
+                                    <i class="bi bi-code-slash me-2"></i>Programming
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-category="design">
+                                    <i class="bi bi-palette me-2"></i>Design
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-category="career">
+                                    <i class="bi bi-briefcase me-2"></i>Career Development
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-category="soft-skills">
+                                    <i class="bi bi-people me-2"></i>Soft Skills
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-category="data">
+                                    <i class="bi bi-bar-chart me-2"></i>Data Science
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Difficulty Filter -->
+                        <div class="mb-3">
+                            <h6>Difficulty Level</h6>
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action" data-difficulty="beginner">
+                                    <i class="bi bi-1-circle me-2 text-success"></i>Beginner
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-difficulty="intermediate">
+                                    <i class="bi bi-2-circle me-2 text-warning"></i>Intermediate
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-difficulty="advanced">
+                                    <i class="bi bi-3-circle me-2 text-danger"></i>Advanced
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Duration Filter -->
+                        <div class="mb-3">
+                            <h6>Duration</h6>
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action" data-duration="short">
+                                    <i class="bi bi-clock me-2"></i>Under 2 hours
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-duration="medium">
+                                    <i class="bi bi-clock me-2"></i>2-10 hours
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-duration="long">
+                                    <i class="bi bi-clock me-2"></i>10+ hours
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- My Progress -->
+                        <div class="mb-3" id="myProgressSection" style="display: none;">
+                            <h6>My Progress</h6>
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action" data-progress="enrolled">
+                                    <i class="bi bi-bookmark me-2"></i>Enrolled
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-progress="in-progress">
+                                    <i class="bi bi-play-circle me-2"></i>In Progress
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action" data-progress="completed">
+                                    <i class="bi bi-check-circle me-2"></i>Completed
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="col-md-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3>Available Courses</h3>
+                    <div class="btn-group" role="group">
+                        <input type="radio" class="btn-check" name="viewMode" id="gridView" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="gridView">
+                            <i class="bi bi-grid-3x3-gap"></i> Grid
+                        </label>
+                        <input type="radio" class="btn-check" name="viewMode" id="listView" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="listView">
+                            <i class="bi bi-list"></i> List
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Course Stats -->
+                <div class="row mb-4" id="courseStats">
+                    <div class="col-md-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body text-center">
+                                <h4 id="totalCourses">0</h4>
+                                <small>Total Courses</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-success text-white">
+                            <div class="card-body text-center">
+                                <h4 id="enrolledCourses">0</h4>
+                                <small>My Courses</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body text-center">
+                                <h4 id="completedCourses">0</h4>
+                                <small>Completed</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body text-center">
+                                <h4 id="totalLearners">0</h4>
+                                <small>Active Learners</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Courses Container -->
+                <div id="coursesContainer">
+                    <!-- Courses will be dynamically loaded here -->
+                </div>
+
+                <!-- Loading Spinner -->
+                <div id="loadingSpinner" class="text-center my-5">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading courses...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Course Modal -->
+    <div class="modal fade" id="createCourseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create New Course</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createCourseForm">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="mb-3">
+                                    <label for="courseTitle" class="form-label">Course Title</label>
+                                    <input type="text" class="form-control" id="courseTitle" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="courseDescription" class="form-label">Course Description</label>
+                                    <textarea class="form-control" id="courseDescription" rows="3" required></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="learningObjectives" class="form-label">Learning Objectives</label>
+                                    <textarea class="form-control" id="learningObjectives" rows="2" placeholder="What will students learn? (one per line)"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="courseCategory" class="form-label">Category</label>
+                                    <select class="form-select" id="courseCategory" required>
+                                        <option value="">Choose category</option>
+                                        <option value="programming">Programming</option>
+                                        <option value="design">Design</option>
+                                        <option value="career">Career Development</option>
+                                        <option value="soft-skills">Soft Skills</option>
+                                        <option value="data">Data Science</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="courseDifficulty" class="form-label">Difficulty Level</label>
+                                    <select class="form-select" id="courseDifficulty" required>
+                                        <option value="">Choose difficulty</option>
+                                        <option value="beginner">Beginner</option>
+                                        <option value="intermediate">Intermediate</option>
+                                        <option value="advanced">Advanced</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="estimatedDuration" class="form-label">Estimated Duration</label>
+                                    <input type="text" class="form-control" id="estimatedDuration" placeholder="e.g., 3 hours, 2 weeks">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="courseTags" class="form-label">Tags</label>
+                                    <input type="text" class="form-control" id="courseTags" placeholder="javascript, beginner, frontend">
+                                    <small class="text-muted">Separate with commas</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lessons Section -->
+                        <hr>
+                        <h6>Course Lessons</h6>
+                        <div id="lessonsContainer">
+                            <div class="lesson-item border rounded p-3 mb-3">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Lesson Title</label>
+                                        <input type="text" class="form-control lesson-title" placeholder="Introduction to JavaScript">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Estimated Time</label>
+                                        <input type="text" class="form-control lesson-duration" placeholder="30 minutes">
+                                    </div>
+                                    <div class="col-md-2 d-flex align-items-end">
+                                        <button type="button" class="btn btn-outline-danger remove-lesson">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <label class="form-label">Lesson Content</label>
+                                    <textarea class="form-control lesson-content" rows="3" placeholder="Enter lesson content here..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn btn-outline-primary mb-3" id="addLessonBtn">
+                            <i class="bi bi-plus"></i> Add Lesson
+                        </button>
+
+                        <div id="createCourseError" class="text-danger small mb-2"></div>
+                        <button type="submit" class="btn btn-primary">Create Course</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header flex-column align-items-center">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title text-center w-100 fs-1">Sign In</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <div id="loginError" class="text-danger small mb-2"></div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="bg-dark text-light py-5">
+  <div class="container">
+    <div class="row">
+
+     
+      <div class="col-md-4 mb-4">
+    <h5 class="text-uppercase">Learning</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Courses</a></li>
+        <li><a href="#" class="text-light text-decoration-none">Tutorials</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Projects</a></li>
+        </ul>
+      </div>
+
+    
+      <div class="col-md-4">
+        <h5 class="text-uppercase">Resources</h5>
+        <ul class="list-unstyled">
+        <li><a href="forum.html" class="text-light text-decoration-none">Forum</a></li>
+          <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+        <li><a href="#" class="text-light text-decoration-none">About</a></li>
+        </ul>
+      </div>
+      
+    <div class="col-md-4 text-center mt-4">
+        <h5 class="text-uppercase">Socials</h5>
+      <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-4"></i></a>
+      <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-4"></i></a>
+      <a href="#" class="text-light me-3"><i class="bi bi-instagram fs-4"></i></a>
+      <a href="#" class="text-light"><i class="bi bi-linkedin fs-4"></i></a>
+    </div>
+    </div>
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./courses.js"></script>
+</body>
+</html>
