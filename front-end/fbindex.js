@@ -53,7 +53,7 @@ function updateUIForLoggedInUser(user) {
   const welcomeButton = document.getElementById('welcome-sign-in');
   if (welcomeButton) {
     welcomeButton.textContent = 'Go to Dashboard';
-    welcomeButton.onclick = () => window.location.href = 'dashboard.html';
+    welcomeButton.onclick = () => window.location.href = 'profile.html';
   }
 }
 
@@ -101,7 +101,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     // Clear form
     document.getElementById('loginForm').reset();
     
-    
+    alert('Login successful!');
     
   } catch (error) {
     console.error('Login error:', error);
